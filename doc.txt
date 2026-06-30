@@ -1,0 +1,1134 @@
+1
+Final Year Project Report
+CRN : IT-1765
+Faculty of Computer Science and Information Technology
+Computer Information Systems
+Al-baha University
+Entitled:
+RevXcel
+Undertaken by:
+Lama Abdullah Al-Ghamdi (444018525)
+Abrar Mubarak Al-Ghamdi (444018644)
+Eman Saeed Al-Amri (444018761)
+Shomoukh Mohammed Al-Suhaimi (444018404)
+Supervised by:
+Dr Bader Alghamdi
+Academic year: 2025-2026
+المملكةالعربيةالسعودية
+وزارةالتعليم
+جامعةالباحة
+كليةالحاسباتوالمعلومات
+قسمتقنيةالمعلومات
+Kingdom of Saudi Arabia
+Ministry of Education
+Al-Baha University
+Faculty of Computer and
+Information Department of
+Information Technology
+2
+Executive Summary
+This project presents RevXcel, a smart marketing intelligence system designed to address the low
+conversion rates in e-commerce using big data analysis. Inspired by a real case where only 2% of
+website visitors completed purchases, the system leverages big data technologies, machine
+learning models, and real-time dashboards to provide actionable insights. By integrating data
+from social media, website analytics, and email campaigns through APIs, RevXcel enables
+marketers to predict customer behavior, evaluate campaign performance, and improve ROI.
+Developed using Python-based tools and SAS Visual Analytics, the project follows the Design
+Science Research methodology and adopts the Waterfall model for structured development. The
+outcome is a scalable and interactive platform that supports data-driven decision-making in
+digital marketing.
+3
+Table of Contents
+Table of Contents
+Table of Contents ........................................................................................................................3
+List of Figures ..............................................................................................................................6
+Table of Tables.............................................................................................................................7
+1. Introduction ........................................................................................................................8
+2. Project Overview, Background, and Motivation .......................................................................8
+2.1 Project Overview ...............................................................................................................8
+2.2 Background .......................................................................................................................8
+2.3 Motivation .........................................................................................................................8
+3. Literature Review (Similar Projects) .........................................................................................9
+3.1 Project 1: GLARE - Google Play Reviews in Arabic ...............................................................9
+Description and Use case: ....................................................................................................9
+Data Sources & Volume: ......................................................................................................9
+Technologies used : .............................................................................................................9
+Architecture and Performance matrices: .............................................................................9
+Performance Highlights : ...................................................................................................10
+Advantages ........................................................................................................................10
+Challenges: ........................................................................................................................10
+3.2 Project 2: E-commerce Data Analytics Project ..................................................................10
+Description and Use case: ..................................................................................................10
+Data Sources & Volume: ....................................................................................................10
+Technologies used: ............................................................................................................11
+Architecture and Performance matrices: ...........................................................................11
+Performance Highlights: ....................................................................................................11
+Advantages: .......................................................................................................................11
+Challenges: ........................................................................................................................11
+3.3 Project 3 : E-commerce Sale Forecasting Project ..............................................................12
+Description and Use case: ..................................................................................................12
+Data Sources & Volume: ....................................................................................................12
+Technologies used: ............................................................................................................12
+4
+Architecture and Performance matrices: ...........................................................................12
+Performance Highlights : ...................................................................................................13
+Advantages: .......................................................................................................................13
+Challenges: ........................................................................................................................13
+3.4 Project 4 : Market Insights for E-commerce Company ......................................................14
+Description and Use case: ..................................................................................................14
+Data Sources & Volume : ...................................................................................................14
+Technologies used : ...........................................................................................................14
+Architecture and Performance matrices: ...........................................................................15
+Performance Highlights: ....................................................................................................15
+Advantages: .......................................................................................................................15
+Challenges: ........................................................................................................................15
+4. Compression between reviewed Projects ..............................................................................17
+5. Problem and Research Questions ..........................................................................................17
+5.1 Problem Statement:.........................................................................................................17
+Venn Diagram· Project Core Integration .............................................................................18
+5.2 Research Questions .........................................................................................................18
+6. Project Aim and Objective .....................................................................................................18
+6.1 Aim ..................................................................................................................................18
+6.2 Objectives........................................................................................................................19
+7. Project Scope, Limitations: ....................................................................................................19
+7.1 Project Scope ...................................................................................................................19
+7.2 Limitations And Constraints: ............................................................................................19
+8. Benefits of the Project ...........................................................................................................19
+9. Project Feasibility ..................................................................................................................20
+9.1 Technical Feasibility .........................................................................................................20
+9.2 Operational Feasibility .....................................................................................................20
+9.3 Economic/Financial Feasibility .........................................................................................20
+9.4 Legal & Ethical Feasibility .................................................................................................21
+10. Stakeholders Analysis ..........................................................................................................21
+11. Project Methodology ...........................................................................................................22
+12. Project Farmwork ............................................................................................................24
+5
+13. Software and Hardware Requirements: ...........................................................................25
+13.1 Hardware Requirements: ...............................................................................................25
+13.2 Software Requirements: ................................................................................................25
+14. Functional Requirements: ................................................................................................26
+14.1 From Administrator's Perspective ..................................................................................26
+14.2 From Vendor Perspective ...............................................................................................26
+14.3 From Clients Perspective................................................................................................26
+14.4 Non-Functional Requirements .......................................................................................26
+15. System Architecture:........................................................................................................26
+15.1 System Components in Detail ........................................................................................27
+16. Unified Modeling Language (UML)...................................................................................28
+16.1 Use Case Diagram ..........................................................................................................28
+16.2 Sequence Diagram .........................................................................................................30
+16.3 Activity Diagram ............................................................................................................31
+16.4 Class Diagram ................................................................................................................33
+16.5 ER Diagram ....................................................................................................................35
+16.6 Data Flow Diagram ........................................................................................................36
+17. User Scenario ..................................................................................................................37
+18. User Interfaces (UI) Prototypes (Sample Layouts) ............................................................38
+19.Gantt Chart: ......................................................................................................................39
+20. Conclusion .......................................................................................................................40
+21. References .......................................................................................................................41
+6
+List of Figures
+Figure 1: Sample of the text. ................................................................................ 10
+Figure 2: Link of the project Search | Kaggle ........................................................ 12
+Figure 3: Link of the project E-Commerce Sales Forecast .................................... 14
+Figure 4: Link of the project: Simulated E-Commerce Insights.............................. 16
+Figure 5: Gap Analysis .......................................................................................... 18
+Figure 6: Project methodology ............................................................................. 22
+Figure 7: Waterfall Framework ............................................................................. 24
+Figure 8: Project system architecture ................................................................... 27
+Figure 9: Project Use Case Diagram ...................................................................... 29
+Figure 10: project Sequence Diagram .................................................................. 30
+Figure 11: project Activity Diagram ...................................................................... 31
+Figure 12: Project Class Diagram .......................................................................... 33
+Figure 13: Project ER Diagram .............................................................................. 35
+Figure 14: Project Data Flow Diagram .................................................................. 36
+Figure 15: project Dashboard ............................................................................... 38
+Figure 17:Project Campaign Analysis.................................................................... 38
+Figure 16: Project Log in Page .............................................................................. 38
+Figure 18: project Login Page ............................................................................... 38
+Figure 19: Project Gantt Chart .............................................................................. 39
+7
+Table of Tables
+Table 1: Technologies used for Market Insights for E-commerce Company .......... 15
+Table 2: Compression between reviewed Projects ............................................... 17
+Table 3: Stakeholders Analysis .............................................................................. 22
+Table 4: Hardware Requirements ......................................................................... 25
+Table 5: Software Requirements .......................................................................... 25
+Table 6: Project Use Case ..................................................................................... 29
+Table 7: Project ER Diagram Relationships ........................................................... 36
+8
+1. Introduction
+The digital world is witnessing a significant increase in website traffic; however, the conversion
+rate to actual buyers remains low. This is evident in the case of Abdulrahman Al-Olayan, where
+the company received over 50,000 visitors but achieved only a 2% purchase rate. Based on this
+challenge, the RevXcel system was developed to address the gap in real-time behavioral data
+analysis. It integrates big data technologies and machine learning to support marketing and sales
+decisions and improve return on investment (ROI).
+This report started with a project background, followed by a review of similar projects in the
+same area. After that, the gap has been identified in alignment with the aim, objectives, and
+benefits of the project. The project methodologies have been introduced using the Design
+Science Methodology (SDR) and the Waterfall framework. Then, the system was designed using
+UML and UI. Finally the Gantt chart presented.
+2. Project Overview, Background, and Motivation
+2.1 Project Overview
+Despite increasing digital traffic (as seen in Abdulrahman Al-Olayan's case with over 50k site
+visitors), only a small fraction (2%) convert to buyers. Businesses lack a unified system to analyze
+behavioral data in real time to drive smarter marketing decisions. RevXcel is designed to solve
+this gap using integrated big data and machine learning to significantly improve conversion and
+ROI.
+2.2 Background
+With the significant deployment of digital transformation, marketing and sales departments in
+large organizations are seeking smarter ways to reach customers. The availability of massive
+customer data from websites and social platforms has created opportunities to make data-driven
+decisions. However, organizations still struggle to unify and analyze these diverse datasets
+effectively. Recent developments in machine learning, API-based integrations, and big data
+platforms like Spark and Hadoop provide the tools necessary to bridge this gap. If not addressed,
+companies may continue making decisions based on fragmented or outdated data, leading to
+lower ROI and customer dissatisfaction.
+2.3 Motivation
+This project was inspired by a real-world case from Abdulrahman Al-Olayan, who faced a critical
+issue: despite having over 50,000 visitors to the company's online store (Nice One), only 2%
+converted to actual buyers. This highlighted a major problem in customer targeting and
+engagement. RevXcel is designed to fix that — by leveraging big data. We aim to significantly
+boost purchase rates, personalize the customer journey, and drive better outcomes for both the
+company and its customers.
+9
+3. Literature Review (Similar Projects)
+3.1 Project 1: GLARE - Google Play Reviews in Arabic
+Description and Use case:
+GLARE is a comprehensive database of 76 million Arabic reviews from Google Play. It analyzes
+user behavior to extract insights about app performance, trends, and user satisfaction. The
+primary use is to support marketing and development decisions.
+Data Sources & Volume:
+The data used in this project are obtained via the Google Play Store for 76 million Arabic reviews.
+Source: Google Play Store
+Data Volume: 76 million Arabic user reviews
+Languages: Arabic dialects and Modern Standard Arabic (MSA)
+Technologies used :
+As for any machine learning projects, the following techniques are mandatory to apply them and
+work on any ML project.
+Natural Language Processing (NLP)
+Python
+Classification & Clustering Algorithms
+Big Data Management Tools
+Apache Spark (for scalable data processing)
+Architecture and Performance matrices:
+1. Data Collection Layer
+In the data collection section, the team collected the data using custom web scraping and
+Google Play APIs for the Arabic reviews precisely.
+2. Preprocessing Layer
+The preprocessing tasks focused mainly on the following:
+Text normalization and cleaning
+Removal of ads, emojis, icons, and misspellings
+Tokenization and duplicate review removal
+3. NLP Feature Engineering
+For the sake of feature engineering the team mainly focused on the following things, the
+sentiment analysis (polarity and emotion detection), keyword extraction, and Context modeling
+using Arabic NLP libraries (e.g., Farasa, CAMeL Tools)
+4. Classification & Grouping
+The classification process focused only on two main things which are sentiment detection
+(positive/negative) and topic classification (e.g., features, bugs, usability, performance)
+5. Analytics & Reporting
+Finally, the reporting included an interactive dashboard, an actionable insight for marketing and
+teams, real-time summaries and feedback on clustering. Additionally, a user trend analysis was
+provided.
+10
+Performance Highlights :
+- 85%+ accuracy using transformer models
+- 70% reduction in processing time with Apache Spark
+- Scalable cloud-based architecture
+- Efficient memory management through batch processing
+- Evaluation metrics: F1-Score, confusion matrix, dialect-specific training
+Advantages:
+- First large Arabic review dataset
+- Enables behavior-based market analysis
+- Provides infrastructure for Arabic NLP benchmarking
+Challenges:
+- Complexity of processing Arabic text (dialects and MSA)
+- High computational resource requirements.
+Figure 1: Sample of the text.
+https://arxiv.org/abs/2412.15259
+3.2 Project 2: E-commerce Data Analytics Project
+Description and Use case:
+This project focuses on analyzing e-commerce sales data to extract insights on customer
+purchasing behavior and best-selling products. It uses descriptive analytics (no predictive models
+or content personalization) to support business intelligence and strategic marketing decisions.
+Data Sources & Volume:
+The project used the sales transactions as its primary source for data analysis. Mainly, the
+project data was obtained from Kaggle
+11
+Technologies used:
+As for any machine learning project, the following techniques and frameworks have been used
+to implement the project.
+ Python: End-to-end data analysis and model deployment
+ Pandas: Data cleaning, preparation, and manipulation
+ NumPy: Handling large datasets and mathematical computations
+ Matplotlib and seaborn: for data visualization
+ sqlite3: for database connection.
+Architecture and Performance matrices:
+The architecture of the project mainly used Juypter Notebook to organize the various sections of
+the projects and mainly it was divided into the following sections:
+ Introduction: introduce the reader to the project and its purpose.
+ Data preparation and table loading for data loading and preparation
+ Order analytics: analyzing the orders and providing insights into them.
+ Customer behavior analysis: to analyze customer behavior.
+ Sales trend analysis: analysis of the trends in the sales process.
+ Conclusion: summarizing the overall results obtained.
+Performance Highlights:
+- Basic architecture with simple Python analysis and visualization tools
+- No built-in performance tracking like ROI or CLV
+- Planned upgrade to advanced architecture with integrated data collection and real-time
+interactive dashboards showing KPIs (e.g., ROI, CLV)
+Advantages:
+- Easy-to-use, powerful tools like Pandas and Plotly
+- Deep sales data analysis and customer behavior insights
+- Clear and interactive visualizations
+Challenges:
+- Dealing with unclean or incomplete data (solved using Pandas and OpenRefine)
+- Limited to descriptive analysis (addressed by integrating XGBoost and LightGBM for forecasting)
+- Lack of interactive dashboards (addressed by using Plotly and Dash)
+- Weak integration from multiple channels (solved with API connections to Google Analytics,
+Mailchimp, CRM)
+12
+Figure 2: Link of the project Search | Kaggle
+3.3 Project 3 : E-commerce Sale Forecasting Project
+Description and Use case:
+This project aims to forecast future sales using advanced machine learning algorithms such as
+XGBoost. It primarily focuses on leveraging historical sales data to predict future performance.
+The current scope does not include behavioral or personalized customer analysis.
+Data Sources & Volume:
+The main source of the data in this project is the historical sales transactions data which are not
+very large in volume but moderate. The project plans to enhance the data sources to include
+CRM, website analytics, email campaigns, etc.
+Technologies used:
+As for any machine learning projects, the following techniques and frameworks have been used
+to implement the project.
+ Python: Full project workflow support — from data wrangling to model evaluation
+ Pandas & NumPy: Efficient data analysis, cleaning, and transformation
+ Scikit-learn: ML framework for training models like XGBoost and Random Forest
+ XGBoost: High-performance gradient boosting model for accurate sales forecasting
+Architecture and Performance matrices:
+The architecture of the project mainly used Juypter Notebook to organize the various sections of
+the projects and it was divided into the following sections:
+ Warehouse Optimization: Overview of strategies and models used to improve inventory
+management and supply chain logistics.
+ Get Ready to Take-Off: Introduction and goals of the project, including what to expect
+and key objectives.
+13
+- Prepare to Start: Initial setup steps including importing libraries, setting
+configurations, and preparing the environment.
+- Get Familiar with the Data: Exploration of the dataset structure, variables, and
+basic descriptive statistics to understand the data.
+- Get an Initial Feeling for the Data: Visual and statistical summaries to observe
+patterns, trends, and potential issues in the raw data.
+ Focus on Daily Product Sales: Analysis of sales volume at the daily level to identify demand
+cycles and seasonal behavior.
+ How to Predict Daily Product Sales: Introduction to forecasting approaches including
+model selection and target variable definition.
+ Feature Engineering: Creation of new variables from existing data to improve model
+performance and capture hidden patterns.
+ Baseline for Product Types: Establishment of baseline models or metrics segmented by
+product category for comparative evaluation.
+Performance Highlights :
+- High accuracy with XGBoost-based forecasting
+- Uses RMSE and MAE for performance evaluation
+- Planned integration of ROI, CLV, and CPC via dashboards
+Advantages:
+- Utilizes advanced ML algorithms (XGBoost, Random Forest)
+- Strong trend analysis of sales and orders
+- Highly flexible and scalable Python environment
+Challenges:
+- Ignores customer behavior and personalization (addressed by linking sales data to marketing
+interactions)
+- Limited data variety (solved by integrating CRM, emails, web traffic)
+- No segmentation or targeting (enhanced using KMeans & Collaborative Filtering)
+- No marketing performance tracking (solved with intelligent dashboards for ROI, CLV, CPC).
+14
+Figure 3: Link of the project E-Commerce Sales Forecast
+3.4 Project 4 : Market Insights for E-commerce Company
+Description and Use case:
+This project is focused on analyzing simulated e-commerce marketing and sales data to extract
+actionable marketing insights. Key objectives include understanding customer purchasing
+behavior, implementing customer segmentation, and evaluating marketing campaign
+performance. These insights help marketers maximize ROI, reduce costs, and identify growth
+opportunities. The dataset has many projects that have been done on it, we will highlight two
+important projects that has worked on analyzing this project.
+Data Sources & Volume :
+The source of the data is from Kaggle in a CSV file containing 2000 to 5000 simulated records,
+which includes the customers demographic data, purchase behavior, and the marketing
+campaign data.
+Technologies used :
+Category Technology / Tool Purpose / Benefit
+Programming
+Language Python Main language for data processing, modeling, and
+analysis
+Data Analysis Libraries
+Pandas Data cleaning, transformation, and tabular
+analysis
+NumPy Numerical operations and efficient array handling
+Matplotlib / Seaborn Static statistical visualizations
+Plotly Interactive charts and dynamic visualizations
+15
+Exploratory Data
+Analysis EDA techniques Demographics, behavior frequency, regional sales
+trends
+Machine Learning
+Frameworks
+Scikit-learn
+Classification (Logistic Regression, Random
+Forest, Decision Tree)Clustering (K-Means,
+Hierarchical)
+XGBoost Gradient boosting for robust classification and
+performance
+Marketing Analysis
+Tools
+RFM Analysis Customer grouping by recency, frequency, and
+spending
+CLV Modeling Estimating long-term customer value
+Segmentation
+Algorithms
+Dividing customers into meaningful groups for
+targeted marketing
+Development &
+Reporting Tools
+Jupyter Notebook Interactive development, analysis narration
+Excel / Google Sheets Light reporting, validation, or sharing results
+Power BI / Tableau
+(optional)
+Building interactive dashboards and executive
+summaries
+Table 1: Technologies used for Market Insights for E-commerce Company
+Architecture and Performance matrices:
+Mainly, the two projects that have worked on this dataset have used Juypter notebook and have
+divided their work into the following main sections:
+ Customer demographics segmentation based on their age, gender, and location.
+ Transaction data analysis concerning product details, timestamps, and transaction
+values.
+ Marketing analysis focusing on the campaign data, customer engagement, and
+conversion rates.
+Performance Highlights:
+- Multi-dimensional insights from demographics, sales, and marketing
+- KPIs like Conversion Rate, AOV, Retention, and ROI
+- Advanced segmentation and clustering for customer understanding
+Advantages:
+- Clean and realistic dataset suitable for learning
+- Highly customizable with optional ML and BI tools
+- Practical relevance to marketing teams and data analysts
+Challenges:
+- No timestamps, solved via synthetic dates or external data
+- Missing key features, enrich or infer data
+- No revenue field, redefine monetary metrics
+- Static dataset, label clearly and simulate updates
+- No ad tracking, simulate multi-channel strategies
+16
+- Non-representative data, clarify its training purpose
+Figure 4: Link of the project: Simulated E-Commerce Insights
+17
+4. Compression between reviewed Projects
+Aspect GLARE E-Commerce
+Analytics
+Sales
+Forecasting
+Simulated
+Insights
+RevXcel (Our
+Project)
+Use Case App review
+behavior
+mining
+Customer
+segmentation
+& trends
+Predicting
+future sales
+Campaign
+performance &
+segmentation
+All-in-one AI-
+powered
+marketing
+intelligence
+Framework NLP + ML EDA +
+Clustering
+ML
+Regression
+Segmentation +
+Visualization
+ML + API
+Integration +
+Interactive
+Dashboards
+Processing
+Type
+Real-time Batch Batch Batch Real-time +
+Automated
+Data
+Volume
+76M reviews 500K+ rows
+(multi-source)
+500K+ rows ~5K simulated
+records
+Scalable Big
+Data (multi-
+source,
+streaming)
+User
+Interface
+Static reports Visual
+dashboard
+Predictive
+plots/charts
+Campaign-
+focused UI
+Fully interactive,
+customizable
+dashboards
+Integration
+Capabilities
+N/A CSV input only CSV input
+only
+Email / SMS APIs, Web
+Analytics, Multi-
+channel Tools
+Outcome /
+Impact
+User
+satisfaction &
+trend mining
+Strategic
+marketing
+insights
+Accurate
+sales
+predictions
+Loyalty,
+segmentation
+strategy
+Higher
+engagement,
+conversion &
+ROI
+Table 2: Compression between reviewed Projects
+5. Problem and Research Questions
+5.1 Problem Statement:
+Despite increasing digital traffic (as seen in Abdulrahman Al-Olayan's case with over 50k site
+visitors), only a small fraction (2%) convert to buyers. Businesses lack a unified system to
+analyze behavioral data in real time to drive smarter marketing decisions. RevXcel is designed
+18
+to solve this gap using integrated big data and machine learning to significantly improve
+conversion and ROI.
+Figure 5: Gap Analysis
+Venn Diagram· Project Core Integration
+This Venn diagram illustrates the integration of key elements in the RevXcel project:
+ Customer Data: social media(X).
+ Marketing Gaps: Low conversion rates and lack of behavioral insights.
+ Smart Tech: Machine learning, APIs, and dashboards.
+The intersection represents RevXcel's strength: combining data, insight, and technology to
+enhance marketing and sales ROI.
+5.2 Research Questions
+• What types of customer behavior patterns can be identified using big data?
+• How can API-based data integration improve marketing automation?
+• To what extend can machine learning improve ROI through predictive analytics?
+6. Project Aim and Objective
+6.1 Aim
+Our project aims to develop a unified big data system integrating social media, and website
+analytics to support marketing and sales decision-making using predictive analytics
+19
+6.2 Objectives
+ Develop a dashboard using Viz of the Day features for actionable insights.
+ Utilize ML to predict and personalize customer behavior.
+ Integrate data sources using modern APIs.
+ Increases business profitability and ROI.
+7. Project Scope, Limitations:
+7.1 Project Scope
+The scope of RevXcel includes:
+• Integrating web, and social media (X) data into a single platform
+• Designing and deploying dynamic dashboards to visualize KPIs like ROI, CLV ( Customer
+Lifetime Value), and conversion rate
+7.2 Limitations And Constraints:
+The challenges and limitations faced by the project are:
+ Real-world marketing data access may be limited for simulation purposes.
+ Model performance depends on data quality and volume.
+ API integrations depend on third-party services' availability and rate limits.
+8. Benefits of the Project
+We will discuss the benefits of the project from different aspects such as market and customer
+engagement, operational efficiency of trading, analysis and decision making, and strategic
+growth.
+ Marketing and Customer Engagement
+- We can enhance targeted marketing campaigns through accurate customer
+segmentation and predictive behavior analysis.
+- We can improve conversion rates by aligning offers with customer intent and
+purchasing habits.
+- We can enable personalization of services and products based on behavioral data
+and historical interactions.
+- We can increase customer loyalty via tailored communications and retention
+strategies.
+- We can identify high-value customer segments for focused marketing investment.
+ Operational Efficiency
+- Reduces manual data processing through automation and real-time data
+integration.
+- Streamlines data aggregation from social media, and website analytics into a
+unified platform.
+- Minimizes human error in reporting and decision-making.
+- Supports scalable campaign management by providing real-time KPIs and alerts.
+20
+ Analytics and Decision Support
+- The system delivers actionable insights via interactive dashboards and real-time
+visualizations.
+- The system supports smarter decision-making with predictive and prescriptive
+analytics.
+- The system provides 360° customer views by merging data from multiple
+touchpoints.
+- The system improves marketing ROI by aligning spending with outcome-driven
+strategies.
+ Strategic Growth and Innovation
+- It will fuel business innovation by testing new marketing scenarios using simulated
+insights.
+- It will improve time-to-market for campaign adjustments based on real-time data
+feedback.
+- It will enable adaptive learning systems, where models evolve with new data to stay
+relevant.
+- It would support future integration with personalization engines, recommendation
+systems.
+9. Project Feasibility
+9.1 Technical Feasibility
+Our project is technically feasible due to the availability of mature tools, libraries, and open-
+source technologies. We utilized Python-based machine learning frameworks such as Scikit-learn,
+XGBoost, and LightGBM, along with Dash and Plotly for visualization. API access to social
+platforms is standard and well-documented, which supports smooth data integration.
+Furthermore, data storage and processing were handled using cloud-compatible tools such as
+Pandas, SQLite, or scalable options like Google BigQuery if needed. All required components are
+within reach using available computing resources and public datasets for simulation
+9.2 Operational Feasibility
+From an operational perspective, our solution fits naturally into the marketing and data
+workflows of modern businesses. The dashboard provides intuitive access to customer insights,
+which supports marketers in making timely decisions. The use of predictive models enhances
+campaign planning without requiring deep technical knowledge from end users. Our design
+ensures the system can be maintained with moderate technical support, and future iterations
+can be scaled based on business needs.
+9.3 Economic/Financial Feasibility
+We focused on using free and open-source technologies to minimize cost. Libraries such as Scikit-
+learn, Dash, and Pandas eliminated licensing fees. The project was developed on personal
+computing devices, and we used sample or publicly available data for testing. If deployed in a
+21
+real business context, additional costs may include cloud hosting, paid APIs, or advanced analytics
+services — but for this phase, the financial risk remains low and manageable.
+9.4 Legal & Ethical Feasibility
+The project complies with basic data privacy and ethical standards. While we used simulated or
+anonymized data, in real-world applications, it is critical to comply with data protection laws such
+as GDPR (General Data Protection Regulation) or local data privacy regulations. Our system
+assumes that organizations have legal consent to collect and process customer data. Ethically,
+our project promotes transparency and responsible use of personal information to enhance
+customer experience, not exploit it.
+10. Stakeholders Analysis
+Identifying stakeholders is essential to understanding their impact and importance on the
+project. The stakeholders here can be anything that can affect the project's operation. The
+table below defines most of the expected stakeholders.
+# Stakeholders
+name
+Descriptions (Role in
+Project)
+Interests /
+Requirements
+Importance Influence
+Level
+1 End Users
+(Customers) Beneficiaries of
+personalization and
+recommendation
+features
+Personalized
+experience, ease of
+shopping, relevant
+offers
+Very High Very High
+2 Marketing
+Team Uses analytics to
+enhance
+campaigns and
+customer targeting
+Accurate insights,
+actionable reports,
+recommendation
+tools
+High High
+3 Sales Team Improve conversion
+rates and revenue
+Understanding
+customer behavior,
+effective follow-up
+tools
+High High
+4 Executive /
+Project Owner Strategic decision-
+making and ROI
+improvement
+Clear KPIs,
+improved purchase
+rates
+Very High Very High
+5 Technical Data
+Team
+Develop intelligent
+models and integrate
+diverse data sources
+for analysis and
+recommendations
+Clean and secure
+data, easy
+integration from
+diverse sources,
+use of modern tools
+and flexible API
+Very High Very High
+22
+6 Founders
+Investors
+(if applicable)
+Evaluates return on
+investment
+Financial reports,
+tangible success
+indicators
+Medium Medium
+7 UI/UX Team Designs user-friendly
+dashboard interfaces
+Clear design, ease
+of navigation
+Medium Medium
+Table 3: Stakeholders Analysis
+11. Project Methodology
+In our project, we adopted the Design Science Research (DSR) methodology because it provides
+a structured yet flexible approach that is ideal for developing innovative technical solutions to
+real-world problems. DSR focuses on building and evaluating artifacts that solve identified
+challenges, which perfectly align with the goal of our RevXcel system (Anderson M , 2015 ).
+Figure 6: Project methodology
+1. Problem Identification
+We began by identifying a real-world challenge: despite high online traffic, companies
+like Nice One experience very low conversion rates due to poor customer targeting
+and fragmented marketing insights.
+2. Define Objectives for a Solution
+Our objective was to build a system that integrates diverse customer data sources and
+23
+Apply machine learning to generate real-time marketing insights, improving both
+conversion rates and ROI.
+3. Design and Development
+We designed and built the RevXcel system to unify customer data, apply predictive
+modeling, and present findings through interactive dashboards.
+4. Demonstration
+We demonstrated our solution using both real and simulated data, showing how it can be
+applied in real-world marketing environments.
+5. Evaluation
+We evaluated the system based on performance metrics such as prediction accuracy,
+visualization clarity, and the potential improvement in ROI.
+6. Communication
+The results of our work are communicated through dynamic dashboards (e.g., Plotly
+Dash) and through this final report, offering both visual and written insights for
+Stakeholders.
+24
+12. Project Farmwork
+The Waterfall model is a linear and sequential software development methodology where each
+phase must be completed before moving to the next. It is best suited for projects with clear
+objectives, stable requirements, and a predictable timeline. (Royce,1970).
+I. Gathering and Analysis Requirements:
+Functional and non-functional requirements were collected from stakeholders, including the
+marketing team, data scientists, and IT personnel. In the RevXcel project, this phase focused on
+identifying pain points such as low conversion rates despite high online traffic.
+II. System Design:
+The gathered requirements were translated into a system architecture. This included designing
+the data flow between social media platforms, website analytics, and dashboards.
+III. Implementation (Development):
+The system was developed using selected technologies such as Python, Pandas, Scikit-learn,
+XGBoost, and Dash for building machine learning pipelines and interactive dashboards
+IV. Testing:
+Testing involved evaluating prediction accuracy, dashboard interactivity, and the reliability of
+data integration using both unit and system-level tests.
+V. Deployment:
+The developed platform was demonstrated using both real and simulated datasets to showcase
+its applicability in a marketing context.
+VI. Maintenance:
+While not a major part of the project scope, the solution was designed with modular and
+maintainable code to support future updates and scalability.
+Advantages of Using the Waterfall Model in RevXcel:
+Figure 7: Waterfall Framework
+25
+• Clarity and structure: Each stage had well-defined goals and deliverables.
+• Documentation-rich: The project aligned with the Waterfall model’s emphasis on
+thorough documentation.
+• Quality assurance: Testing after full system development ensured that all
+components functioned correctly.
+13. Software and Hardware Requirements:
+13.1 Hardware Requirements:
+Developing the proposed system needs a laptop or personal computer with many
+recommended features.
+Requirement Recommended
+CPU Intel Core i5 / AMD Ryzen 5 or better
+Memory Minimum 8 GB RAM, 16 GB preferred
+Hard Disk 512 GB SSD for local storage and performance
+Internet Stable internet connection for SAS access
+Cloud Platform SAS
+GPU Integrated GPU is sufficient, dedicated optional
+Mobile Devices Android + iOS
+Laptop / Tablet Windows 10/11, Surface Pro, iPad, etc.
+Table 4: Hardware Requirements
+13.2 Software Requirements:
+The software requirements are a set of tools used to develop the proposed system. Table 3
+shows the software requirements for the proposed system.
+Table 5: Software Requirements
+Item Description
+Programming Language Python
+Libraries Pandas, NumPy, Scikit-learn, XGBoost
+Dashboard Tools SAS Visual Analytics
+Cloud Platforms SAS Cloud
+Databases SAS Data Warehouse
+26
+14. Functional Requirements:
+14.1 From Administrator's Perspective
+The administrator in the system has key responsibilities, including approving or rejecting vendor
+applications and verifying distinguished vendors to enhance visibility. They also have the
+authority to delete vendor accounts based on reviews or policy violations, ensuring a safe and
+trustworthy platform.
+14.2 From Vendor Perspective
+Vendors play a crucial role in providing services to customers through the platform. To ensure a
+seamless experience, several functions are integrated. These include account creation, service
+offering, and product management, which are essential for vendors to maintain their presence
+and offerings.
+14.3 From Clients Perspective
+Clients serve as the primary users of the e-platform, gaining access to many services offered by
+vendors. To enhance their experience, the system allows clients to browse and view products
+(services) and vendor details without the need to log in initially. This ensures ease of navigation
+and smooth interaction with the services.
+14.4 Non-Functional Requirements
+• Scalability: Ability to scale horizontally for increased user and vendor numbers.
+• Security: Encrypt user data and implement secure authentication protocols.
+• Usability: Intuitive interface for easy navigation with minimal training.
+• Maintainability: Modular and well-documented codebase for easy updates.
+• Compatibility: Functionality across major web browsers and mobile platforms.
+• Localization: Support for Arabic and English languages initially.
+15. System Architecture:
+System Architecture refers to the high-level structure and organization of a system, including its
+components, their relationships, and the principles guiding its design and evolution. It defines
+how different parts of a system interact to achieve desired functionality, performance, scalability,
+security, and reliability. In our system RevXcel the team develops the system component in
+abstract level to show the interaction among entity. Figure below.
+27
+Figure 8: Project system architecture
+15.1 System Components in Detail
+System Input:
+The system gathers data from three primary sources:
+ Social Media Platforms: Data is collected from platforms such as X (formerly Twitter) to
+analyze customer sentiment and engagement behaviors.
+ Email Campaigns: Data from email marketing platforms like Gmail is used to evaluate
+campaign performance.
+ Third-party APIs: Sources like Google Reviews provide additional customer feedback and
+insights.
+These data streams are collected through API-Based Data Collectors, supported by SAS CAS
+(Cloud Analytics Services) and Python APIs, ensuring structured and efficient data integration.
+System Processes:
+Import:
+ Collected data is imported into the system using Advanced Technologies, SAS CAS (Cloud
+Analytics Services), and APIs for further analysis.
+Operate/Process:
+28
+ Predictive Models (Machine Learning) are applied to:
+o Analyze Customer Behaviour
+o Provide Product Recommendations
+o Evaluate Campaign Effectiveness
+Export/Visualize:
+ The system develops Interactive Visualizations using:
+o SAS Visual Analytics
+o PlotlyLibrary
+These visual tools enable clear and insightful data representations for decision-
+making.
+System Output:
+ The system produces a Combined Analysis Dashboard that includes:
+o Model Prediction Trends Visuals
+o Model Results Visuals
+o Interactive Data Visualizations
+These outputs are used to generate:
+ Actionable Insights such as:
+o Optimized Marketing Strategies
+o Informed Data-driven Decisions
+o Tailored Personalized Campaign Suggestions
+System Diagram Explanation:
+The system architecture flows through three layers as illustrated:
+1. System Input: Data collection from X, Gmail, and Google Reviews via API collectors.
+2. System Processes: Data is imported, processed with predictive models, and visualized
+through interactive tools.
+3. System Output: Results are presented in dashboards, leading to actionable marketing
+insights.
+16. Unified Modeling Language (UML)
+16.1 Use Case Diagram
+Actors
+1. Developer
+o Has full access to system operations
+o Can manage users, Online Shops, and monitor the system
+2. Online Shop
+o A business user who submits campaign/product data
+o Needs approval before their data is visible in the system
+3. MarketingUser
+o An internal company user (e.g., marketer, analyst)
+o Views dashboards, runs analytics, and generates reports
+29
+Figure 9: Project Use Case Diagram
+Use Case Description
+Register Account Online Shop registers on the system for approval by Developer
+Login All actors log in to access their respective interfaces
+Upload Campaign Data Online Shops upload product, campaign, and offer information
+Submit API Keys Online Shops submit API credentials for integration (e.g., social
+media data)
+Analyze Campaign
+Performance
+Marketing users analyze ROI, conversion rates, and KPIs
+View Dashboard KPIs All actors with access can view real-time insights via the dashboard
+Generate Reports Generates visual and tabular reports on campaign outcomes
+Predict Customer Behavior ML models predict user behavior and segment profiles
+Approve Online Shops Developer approves or rejects Online Shop registrations
+Manage Users Developer adds/removes users, assigns roles
+Monitor System Logs Developer audits usage and data flow activity
+Table 6: Project Use Case
+30
+16.2 Sequence Diagram
+Explain
+1. Login Process
+ The MarketingUser sends a login request to the system.
+ The system forwards this to the Auth Module for validation.
+ If successful, the system responds with access to the dashboard.
+ This step ensures that only authorized users access the data.
+2. Analyze Campaign Performance
+ The user initiates an analysis request (e.g., to view how ads are performing).
+ The system delegates this to the Analytics Engine.
+ The analytics engine retrieves campaign data, processes it, and returns insights (e.g.,
+click-through rates, cost per lead).
+ The user receives visual metrics and analysis results.
+3. Predict Customer Behavior
+ The MarketingUser wants to understand future behavior (e.g., segment prediction,
+churn likelihood).
+ The system calls the ML Model, which runs trained algorithms (like XGBoost or Random
+Forest).
+ The output includes predicted customer segments or scores (e.g., High-Value, At-Risk).
+ This prediction is sent back to the user for interpretation.
+Figure 10: project Sequence Diagram
+31
+4. View Dashboard KPIs
+ The user requests to view high-level performance metrics (e.g., ROI, CLV, engagement
+rate).
+ The system interacts with the Dashboard Module to load relevant visuals.
+ Graphs and charts are returned, providing an overview of marketing performance.
+5. Generate Reports
+ The MarketingUser requests a report summarizing performance or predictions.
+ The system calls the Report Module to format the data into a file (PDF/CSV).
+ The system then provides a download link to the user.
+16.3 Activity Diagram
+Explain
+Start of the Process
+The user begins by accessing the system and entering their login credentials (username and
+password). This is the initial authentication phase that determines if the user has access to the
+system’s dashboard and features.
+Authentication Decision
+If the login is successful, the user is granted access and redirected to the main panel. If the login
+fails, the system returns an error message and the process stops for that session.
+Vendor Operations
+Figure 11: project Activity Diagram
+32
+After successful login, vendors can perform several key actions:
+ Submit API keys for third-party data sources such as social media platforms and Google
+Analytics.
+ Upload campaign data including campaign name, budget, dates, and target audience
+details.
+These inputs are essential for activating the system’s analytics and prediction modules.
+System Processing Steps
+Once data is submitted:
+1. The system fetches raw marketing data through the provided APIs.
+2. This data is cleaned and preprocessed (e.g., removing duplicates, formatting).
+3. The machine learning model is executed to generate predictions on customer behavior
+and expected campaign performance.
+4. The processed data, including calculated KPIs and insights, is stored in the analytics
+database.
+These steps are automated and occur in sequence once campaign input and API data are
+available.
+Dashboard Display
+At the final stage, the user is presented with a comprehensive dashboard containing the
+following elements:
+ Key Performance Indicators (KPIs) such as Return on Investment (ROI), Customer
+Lifetime Value (CLV), and engagement rate.
+ Visual graphs that display performance across different marketing channels.
+ Customer behavior segmentation based on model predictions.
+33
+16.4 Class Diagram
+Explain
+1. online shop (Vendor)
+ Attributes:
+o vendorID: Unique identifier.
+o businessName: Name of the vendor's company.
+o apiKey: Used to fetch external marketing data.
+ Methods:
+o submitAPIKeys(): Upload integration keys.
+o uploadCampaign(): Send campaign data to the system.
+o viewDashboard(): Access metrics and insights.
+o generateReport(): Create summary reports.
+ Relationships:
+o One vendor can create multiple campaigns (1 to M).
+2. Campaign
+ Attributes:
+o campaignID, vendorID, title, budget, startDate, endDate.
+ Methods:
+o analyzePerformance(): Evaluates how the campaign is doing.
+ Relationships:
+o Belongs to one vendor.
+o Has one PredictionModel.
+Figure 12: Project Class Diagram
+34
+o Linked to many Reports.
+3. PredictionModel
+ Attributes:
+o modelID, type, accuracy.
+ Methods:
+o trainModel(): Train ML model.
+o predict(): Predict outcomes (e.g., customer segments).
+ Relationships:
+o One-to-one relationship with Campaign.
+4. Report
+ Attributes:
+o reportID, userID, campaignID, content, generatedAt.
+ Methods:
+o exportPDF(), exportCSV(): Export reports in different formats.
+ Relationships:
+o Linked to one User (MarketingUser or Vendor).
+o Linked to one Campaign.
+o Each user can have multiple reports.
+5. Dashboard
+ Attributes:
+o dashboardID, userID, dataSummary.
+ Methods:
+o loadKPIs(): Load metrics like ROI, CLV.
+o refresh(): Refresh dashboard data.
+ Relationships:
+o One-to-one relationship with each user.
+6. MarketingUser
+ Methods:
+o analyzeCampaign(): Analyze performance data.
+o predictBehavior(): Run ML predictions.
+o viewKPIs(): View dashboard insights.
+o generateReport(): Create analytic reports.
+ Relationships:
+o Connected to Dashboard and Report (1-to-Many).
+7. Developers (Admin)
+ Methods:
+o rejectVendor(): Reject a vendor’s application.
+o manageUsers(): CRUD operations on users.
+o viewLogs(): Audit and monitor logs.
+ Relationships:
+o Linked to Dashboard and Report (1-to-Many).
+35
+16.5 ER Diagram
+Figure 13: Project ER Diagram
+Explanation
+Entities
+Online Shops
+ Linked to a user
+ Contains business-specific information and API keys
+Campaigns
+ Uploaded by Online Shops
+ Tracks marketing data like budget and timeline
+Reports
+ Linked to a campaign and generated by a user
+ Includes content such as analytics, visualizations, or KPIs
+PredictionModels
+ Each campaign uses one machine learning model for behavior prediction
+ Tracks model type and accuracy
+Dashboards
+ Personalized dashboard for each user
+ Displays summaries and KPIs
+36
+Relationship Type Description
+Users → Online Shops One-to-
+Many
+A user (Online Shop role) can own multiple Online
+Shop profiles
+Users → Reports One-to-
+Many
+A user can generate multiple reports
+Users → Dashboards One-to-One Each user has one dashboard
+Online Shops → Campaigns One-to-
+Many
+A Online Shop can create multiple campaigns
+Campaigns → Reports One-to-
+Many
+Each campaign can generate multiple reports
+Campaigns →
+PredictionModels
+One-to-One Each campaign uses one predictive model
+Table 7: Project ER Diagram Relationships
+16.6 Data Flow Diagram
+Figure 14: Project Data Flow Diagram
+External Entities
+ Online Shop: Uploads campaign data and API keys after login
+ Marketing User: Requests KPIs and generates reports based on ML predictions
+ Developer: Logs in to manage system access and view/report overall insights
+ External APIs: Provide raw user behavior and engagement data for analysis
+Processes
+ 1.0 Register & Login Process: Handles authentication and access control
+37
+ 2.0 Campaign & Data Upload: Accepts campaign input and API integration
+ 3.0 Data Processing & ML Engine: Applies preprocessing, prediction, and segmentation
+ 4.0 Dashboard & KPI Viewer: Retrieves and visualizes KPIs for Online Shops and
+marketers
+ 5.0 Report Generation: Compiles insights and predictions into downloadable reports
+Data Stores
+ D1: User DB: Stores user credentials and profile information
+ D2: Campaign DB: Contains campaign metadata, API configurations
+ D3: Analytics/ML Output: Stores processed data, KPIs, and ML predictions
+ D4: Reports Store: Archives system-generated PDF/CSV reports
+Data Flows
+ Online Shops send campaign data and receive visual feedback
+ Marketing users interact with the analytics engine and reporting system
+ Developers have monitoring access to all insights and system activity
+17. User Scenario
+Scenario: Marketing User Journey – From Login to Insight
+A marketing analyst logs into the RevXcel platform using their company email and password.
+After successful authentication, the system redirects the user to the main dashboard, where a
+high-level view of current performance metrics is displayed, including:
+ ROI (Return on Investment)
+ CLV (Customer Lifetime Value)
+ Engagement Rate
+ Top-performing Channels
+The user navigates to the Campaign Analysis section via the sidebar. Here, they can:
+ Select from a list of active and archived campaigns
+ View key statistics such as click-through rate, conversion rate, and budget usage
+ Visualize ROI across multiple marketing channels (email, social media, paid ads)
+To explore customer behavior further, the user clicks “Predict Segments”, which runs the ML
+model in the background. Within seconds, RevXcel returns segmented predictions such as:
+ High-potential leads
+ At-risk customers
+ Frequent buyers
+Each segment includes detailed descriptions, graphs, and a suggested marketing strategy.
+From the Reports tab, the user clicks "Generate Report". The system compiles the selected
+campaign data, ML outputs, and dashboard visuals into a downloadable PDF report.
+Finally, the marketing user returns to the dashboard, where updated insights are now visible.
+They use these results to schedule a team meeting and adjust ad spending based on the
+predicted customer behavior.
+38
+18. User Interfaces (UI) Prototypes (Sample Layouts)
+19.1 Dashboard Home Page: Quick stats (ROI, CLV)
+19.2 Campaign Analysis: Graphs + ROI per channel
+Figure 15: project Dashboard
+Figure 17:Project Campaign Analysis
+Figure 18: project Login Page
+Figure 16: Project Log in Page
+39
+19.Gantt Chart:
+Figure 19: Project Gantt Chart
+40
+20. Conclusion
+The RevXcel project demonstrates how big data and machine learning technologies can address
+the issue of low conversion rates in digital marketing. By integrating data from social media and
+website analytics, and presenting predictive, interactive dashboards, the system delivers
+actionable insights that help marketing and sales teams enhance performance and increase ROI.
+This report started with a project background, followed by a review of similar projects in the
+same area. After that, the gap has been identified in alignment with the aim, objectives, and
+benefits of the project. The project methodologies have been introduced using the Design
+Science Methodology (SDR) and the Waterfall framework. Then, the system was designed using
+UML and UI. Finally the Gantt chart presented.
+The use of open-source tools and API-based integration also supports the feasibility of
+implementing this solution in real business environments.
+41
