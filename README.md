@@ -1,100 +1,153 @@
 # RevXcel - Smart Marketing Intelligence System
 
-A production-ready marketing intelligence platform that integrates big data analysis, machine learning, and interactive dashboards to provide actionable insights for marketing and sales teams.
+> 🎓 Team Graduation Project – Al-Baha University
+
+RevXcel is an AI-powered marketing intelligence platform developed as a graduation project. The system helps marketing teams make data-driven decisions through interactive dashboards, customer segmentation, predictive analytics, and campaign performance analysis.
+
+---
+
+## Project Overview
+
+RevXcel combines Business Intelligence, Data Analytics, and Machine Learning into one platform that enables organizations to:
+
+- Monitor business KPIs in real time.
+- Analyze marketing campaign performance.
+- Predict customer behavior using Machine Learning.
+- Segment customers based on purchasing patterns.
+- Generate business reports.
+- Support data-driven decision-making.
+
+---
+
+## My Contributions
+
+As a member of the project team, I contributed to:
+
+- Developed the core application using Python and Plotly Dash.
+- Designed and implemented interactive dashboards for business analytics.
+- Built data processing and KPI calculation modules.
+- Implemented machine learning features for customer segmentation and predictive analytics.
+- Created interactive data visualizations to support business decision-making.
+- Participated in system testing and technical documentation.
+
+---
 
 ## Features
 
-- **Interactive Dashboard**: Real-time KPIs including ROI, CLV, Conversion Rate, and Total Revenue
-- **Campaign Analysis**: Comprehensive campaign performance metrics and ROI analysis
-- **Customer Segmentation**: ML-powered customer segmentation using RFM analysis and predictive models
-- **Report Generation**: Export insights to PDF and CSV formats
-- **Role-Based Access**: Support for Developer, Marketing User, and Online Shop roles
+- 📊 Interactive Dashboard
+- 📈 Campaign Performance Analysis
+- 👥 Customer Segmentation
+- 🤖 Machine Learning Predictions
+- 📄 PDF & CSV Report Generation
+- 🔐 Role-Based Authentication
+- 📉 KPI Monitoring
+- 📍 Geographic Sales Analysis
+- 💡 Marketing Recommendation System
+
+---
 
 ## Technology Stack
 
-- **Frontend**: Plotly Dash with Bootstrap components
-- **Backend**: Python with SQLAlchemy
-- **Machine Learning**: XGBoost, LightGBM, Scikit-learn (KMeans, Random Forest)
-- **Database**: SQLite
-- **Data Processing**: Pandas, NumPy
+### Programming Language
+- Python
+
+### Frameworks
+- Plotly Dash
+- Flask
+
+### Machine Learning
+- Scikit-learn
+- XGBoost
+- LightGBM
+
+### Data Analysis
+- Pandas
+- NumPy
+
+### Database
+- SQLite
+- SQLAlchemy
+
+### Data Visualization
+- Plotly
+- Dash Bootstrap Components
+
+---
+
+## Project Structure
+
+```text
+RevXcel/
+├── app.py
+├── config.py
+├── requirements.txt
+├── components/
+├── models/
+├── utils/
+├── assets/
+├── data/
+└── reports/
+```
+
+---
 
 ## Installation
 
-1. Clone the repository:
+Clone the repository:
+
 ```bash
-git clone <repository-url>
+git clone https://github.com/eman-analytics/RevXcel.git
+```
+
+Navigate to the project folder:
+
+```bash
 cd RevXcel
 ```
 
-2. Create a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
+Install dependencies:
 
-3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Ensure data files are in the `data/` directory:
-   - `sales_data_processed.csv`
-   - `sales_data_ml_ready.csv`
-   - `customer_metrics.csv`
-   - `campaign_data.csv`
+Run the application:
 
-5. Run the application:
 ```bash
 python app.py
 ```
 
-6. Access the application at `http://localhost:8050`
-
-## Default Login Credentials
-
-- **Username**: admin
-- **Password**: admin123
-- **Role**: Developer
-
-**⚠️ Important**: Change the default admin password in production!
-
-## Project Structure
+Open your browser:
 
 ```
-RevXcel/
-├── app.py                 # Main Dash application
-├── config.py              # Configuration settings
-├── requirements.txt       # Python dependencies
-├── models/
-│   ├── database.py        # Database models
-│   └── ml_models.py       # ML model training and prediction
-├── utils/
-│   ├── data_loader.py     # Data loading utilities
-│   ├── kpi_calculator.py  # KPI calculations
-│   └── auth.py            # Authentication logic
-├── components/
-│   ├── dashboard.py       # Main dashboard
-│   ├── campaign_analysis.py # Campaign analysis page
-│   ├── customer_segmentation.py # ML predictions page
-│   └── reports.py         # Report generation
-├── assets/
-│   └── style.css          # Custom CSS
-└── data/                  # Data files
+http://localhost:8050
 ```
 
-## Usage
+---
 
-1. **Login**: Use your credentials to access the system
-2. **Dashboard**: View overall KPIs and performance metrics
-3. **Campaign Analysis**: Analyze campaign performance by channel and date range
-4. **Customer Segmentation**: View customer segments and run ML predictions
-5. **Reports**: Generate and download reports in PDF or CSV format
+## Skills Demonstrated
 
-## Development
+- Data Analysis
+- Business Intelligence
+- Dashboard Development
+- Machine Learning
+- Customer Segmentation
+- Predictive Analytics
+- Data Visualization
+- Python Programming
+- SQL
+- Problem Solving
 
-This project follows the YAGNI (You Aren't Gonna Need It) principle, focusing on essential features for production readiness.
+---
+
+## Academic Information
+
+This project was developed as a **team graduation project** at **Al-Baha University**.
+
+The repository is published for educational and portfolio purposes.
+
+---
 
 ## License
 
-Academic Project - Al-Baha University
-
+Academic Project – Al-Baha University
